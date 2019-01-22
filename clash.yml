@@ -1,4 +1,4 @@
-# # 2019-01-18 16:11:02
+# # 2019-01-22 09:20:02
 #---------------------------------------------------#
 ## 配置文件需要放置在 $HOME/.config/clash/config.yml
 #---------------------------------------------------#
@@ -20,7 +20,7 @@ mode: Rule
 
 # 设置日志输出级别 (默认级别：info，级别越高日志输出量越大，越倾向于调试)
 # 四个级别：info / warning / error / debug
-log-level: info
+log-level: warning
 
 # clash 的 RESTful API
 external-controller: 127.0.0.1:9090
@@ -57,10 +57,10 @@ Proxy:
 # shadowbox
 # 所支持的加密方式与 go-shadowsocks2 保持一致
 # 支持加密方式： AEAD_AES_128_GCM AEAD_AES_192_GCM AEAD_AES_256_GCM AEAD_CHACHA20_POLY1305 AES-128-CTR AES-192-CTR AES-256-CTR AES-128-CFB AES-192-CFB AES-256-CFB CHACHA20-IETF XCHACHA20 
-# clash 额外支持 chacha20 rc4-md5 xchacha20-ietf-poly1305 加密方式
+# clash 额外支持 CHACHA20 RC4-MD5 XCHACHA20-IETF-POLY1305 加密方式
 
-- { name: “ss1”, type: ss, server: 10.1.1.1, port: 10810, cipher: AEAD_CHACHA20_POLY1305, password: SSpassword }
-- { name: “ss2”, type: ss, server: 10.1.1.1, port: 10811, cipher: AES-256-CFB, password: SSpassword }
+- { name: “ZWHK”, type: ss, server: 1.2.3.4, port: 10810, cipher: AEAD_CHACHA20_POLY1305, password: SSpassword }
+- { name: “ZWUS”, type: ss, server: us.com, port: 443, cipher: AES-256-CFB, password: SSpassword }
 
 
 # socks5
@@ -71,11 +71,11 @@ Proxy Group:
 #- { name: "auto", type: url-test, proxies: ["ss1", "ss2"], url: "https://www.bing.com", interval: 300 }
 
 # fallback 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，自动选择服务器
-#- { name: "fallback-auto", type: fallback, proxies: ["ss1", "ss2"], url: "https://www.bing.com", interval: 300 }
+- { name: "fallback-auto", type: fallback, proxies: ["ZWHK", "ZWUS"], url: "https://www.google.com", interval: 300 }
 
 # select 用来允许用户手动选择 代理服务器 或 服务器组
 # 您也可以使用 RESTful API 去切换服务器，这种方式推荐在 GUI 中使用
-- { name: "Proxy", type: select, proxies: [“ss1”, “ss2”] }
+- { name: "Proxy", type: select, proxies: [“ZWHK”, “ZWUS”] }
 
 Rule:
 - DOMAIN-SUFFIX,tajs.qq.com,REJECT
