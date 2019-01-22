@@ -128,6 +128,8 @@ Rule:
 - DOMAIN-SUFFIX,wangmeng.baidu.com,REJECT
 
 - DOMAIN-SUFFIX,applex.net,DIRECT
+- DOMAIN-SUFFIX,licdn.com,DIRECT
+- DOMAIN-SUFFIX,linkedin.com,DIRECT
 
 
 
