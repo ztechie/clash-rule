@@ -19,8 +19,8 @@ allow-lan: false
 mode: Rule
 
 # 设置日志输出级别 (默认级别：info，级别越高日志输出量越大，越倾向于调试)
-# 四个级别：info / warning / error / debug
-log-level: warning
+# 五个级别：info / warning / error / debug ／ silent
+log-level: silent
 
 # clash 的 RESTful API
 external-controller: 127.0.0.1:9090
@@ -124,6 +124,8 @@ Rule:
 - DOMAIN-SUFFIX,applex.net,DIRECT
 - DOMAIN-SUFFIX,licdn.com,DIRECT
 - DOMAIN-SUFFIX,linkedin.com,DIRECT
+- DOMAIN-SUFFIX,live.com,DIRECT
+- DOMAIN-SUFFIX,digicert.com,DIRECT
 
 
 
@@ -137,7 +139,7 @@ Rule:
 - DOMAIN-SUFFIX,aaplimg.com,DIRECT
 - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
 - DOMAIN-SUFFIX,apple.com,DIRECT
-- DOMAIN,e.crashlytics.com,REJECT //注释此选项有助于大多数App开发者分析崩溃信息；如果您拒绝一切崩溃数据统计、搜集，请取消 # 注释。
+- DOMAIN,e.crashlytics.com,REJECT 
 
 
 # 自定义规则
