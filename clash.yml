@@ -239,6 +239,7 @@ Rule:
 - DOMAIN-SUFFIX,qiyipic.com,DIRECT
 - DOMAIN-SUFFIX,qq.com,DIRECT
 - DOMAIN-SUFFIX,qqurl.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
 - DOMAIN-SUFFIX,rarbg.to,DIRECT
 - DOMAIN-SUFFIX,ruguoapp.com,DIRECT
 - DOMAIN-SUFFIX,segmentfault.com,DIRECT
@@ -452,7 +453,6 @@ Rule:
 - DOMAIN-SUFFIX,linode.com,Proxy
 - DOMAIN-SUFFIX,lithium.com,Proxy
 - DOMAIN-SUFFIX,littlehj.com,Proxy
-- DOMAIN-SUFFIX,live.com,Proxy
 - DOMAIN-SUFFIX,live.net,Proxy
 - DOMAIN-SUFFIX,livefilestore.com,Proxy
 - DOMAIN-SUFFIX,llnwd.net,Proxy
