@@ -1,4 +1,4 @@
-# # 2019-3-1 13:57:00
+# # 2019-3-20 08:52:00
 #---------------------------------------------------#
 ## 配置文件需要放置在 $HOME/.config/clash/config.yml
 #---------------------------------------------------#
@@ -80,6 +80,10 @@ Proxy Group:
 - { name: Proxy, type: select, proxies: [10810, 10811, 10812] }
 
 Rule:
+
+# 自定义规则
+## 您可以在此处插入您补充的自定义规则
+
 - DOMAIN-SUFFIX,tajs.qq.com,REJECT
 - DOMAIN-SUFFIX,pingtas.qq.com,REJECT
 - DOMAIN-SUFFIX,m1.baidu.com,REJECT
@@ -129,13 +133,12 @@ Rule:
 - DOMAIN-SUFFIX,utk.baidu.com,REJECT
 - DOMAIN-SUFFIX,wangmeng.baidu.com,REJECT
 
+- DOMAIN-SUFFIX,licdn.com,Proxy
+- DOMAIN-SUFFIX,linkedin.com,Proxy
+
 - DOMAIN-SUFFIX,applex.net,DIRECT
-- DOMAIN-SUFFIX,licdn.com,DIRECT
-- DOMAIN-SUFFIX,linkedin.com,DIRECT
 - DOMAIN-SUFFIX,live.com,DIRECT
 - DOMAIN-SUFFIX,digicert.com,DIRECT
-
-
 
 # Apple
 - DOMAIN,hls.itunes.apple.com,Proxy
@@ -148,10 +151,6 @@ Rule:
 - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
 - DOMAIN-SUFFIX,apple.com,DIRECT
 - DOMAIN,e.crashlytics.com,REJECT 
-
-
-# 自定义规则
-## 您可以在此处插入您补充的自定义规则
 
 # 国内网站
 - DOMAIN-SUFFIX,cn,DIRECT
